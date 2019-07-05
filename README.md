@@ -1,2 +1,2 @@
 # node-dirz
-path tracker for node
+key>value store for node

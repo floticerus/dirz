@@ -1,0 +1,19 @@
+{
+  "name": "dirz",
+  "version": "0.0.1",
+  "description": "path tracker for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvonflotow/node-dirz.git"
+  },
+  "author": "Kevin von Flotow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kvonflotow/node-dirz/issues"
+  },
+  "homepage": "https://github.com/kvonflotow/node-dirz#readme"
+}
