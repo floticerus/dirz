@@ -1,19 +1,28 @@
 {
   "name": "dirz",
-  "version": "0.0.1",
-  "description": "path tracker for node",
+  "version": "0.0.2",
+  "description": "a super simple key/value store",
   "main": "index.js",
   "scripts": {
-    "test": "node test/test.js"
+    "build:docs": "jsdoc2md index.js > README.md",
+    "test": "jest test.js",
+    "test:coverage": "jest --coverage test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kvonflotow/node-dirz.git"
+    "url": "git+https://github.com/kvonflotow/dirz.git"
   },
   "author": "Kevin von Flotow",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kvonflotow/node-dirz/issues"
+    "url": "https://github.com/kvonflotow/dirz/issues"
   },
-  "homepage": "https://github.com/kvonflotow/node-dirz#readme"
+  "homepage": "https://github.com/kvonflotow/dirz#readme",
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "jsdoc-to-markdown": "^6.0.1"
+  },
+  "dependencies": {
+    "boolean": "^3.0.1"
+  }
 }
