@@ -1,12 +1,38 @@
 const { boolean: toBoolean } = require( 'boolean' )
 
-const store = {}
+const { v1: uuid } = require( 'uuid' )
+
+
+const stores = {}
 
 /**
  * @typedef {Dirz}
  */
 class Dirz
 {
+  constructor( options = {} )
+  {
+    this.options = Object.assign(
+      {
+
+      },
+
+      options
+    )
+
+    /** @type {string} */
+    this.id = this.options.id || uuid()
+
+    this.store = {}
+
+    stores[ this.id ] = this
+  }
+
+  static getStore( id )
+  {
+    return stores[ id ]
+  }
+
   /**
    * gets value for the key.
    * 
@@ -15,10 +41,10 @@ class Dirz
    * 
    * @returns {*}
    */
-  static get( key, defaultValue = null )
+  get( key, defaultValue = null )
   {
-    return store.hasOwnProperty( key )
-      ? store[ key ]
+    return this.store.hasOwnProperty( key )
+      ? this.store[ key ]
       : defaultValue
   }
 
@@ -31,26 +57,26 @@ class Dirz
    * @param {number|string|boolean} value 
    * @param {string} [type] - allowed types are `string` `int`/`integer` `float` `bool`/`boolean`
    */
-  static set( key, value, type )
+  set( key, value, type )
   {
     switch ( type )
     {
       case 'int':
       case 'integer':
-        store[ key ] = parseInt( value )
+        this.store[ key ] = parseInt( value )
         break
       case 'float':
-        store[ key ] = parseFloat( value )
+        this.store[ key ] = parseFloat( value )
         break
       case 'string':
-        store[ key ] = value && value.toString ? value.toString() : value
+        this.store[ key ] = value && value.toString ? value.toString() : value
         break
       case 'bool':
       case 'boolean':
-        store[ key ] = toBoolean( value )
+        this.store[ key ] = toBoolean( value )
         break
       default:
-        store[ key ] = value
+        this.store[ key ] = value
         break
     }
   }
@@ -61,12 +87,12 @@ class Dirz
    * 
    * @param {string} key 
    */
-  static remove( key )
+  remove( key )
   {
-    store[ key ] = null
-    delete store[ key ]
+    this.store[ key ] = null
+    delete this.store[ key ]
   }
 }
 
 
-module.exports = Dirz
+module.exports = new Dirz()

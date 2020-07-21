@@ -1,6 +1,6 @@
 {
   "name": "dirz",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a super simple key/value store",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "jsdoc-to-markdown": "^6.0.1"
   },
   "dependencies": {
-    "boolean": "^3.0.1"
+    "boolean": "^3.0.1",
+    "uuid": "^8.2.0"
   }
 }
