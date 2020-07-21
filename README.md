@@ -1,32 +1,46 @@
+## Classes
+
+<dl>
+<dt><a href="#Dirz">Dirz</a> : <code><a href="#Dirz">Dirz</a></code></dt>
+<dd></dd>
+</dl>
+
+## Members
+
+<dl>
+<dt><a href="#id">id</a> : <code>string</code></dt>
+<dd></dd>
+</dl>
+
 <a name="Dirz"></a>
 
 ## Dirz : [<code>Dirz</code>](#Dirz)
-**Kind**: global typedef  
+**Kind**: global class  
 
 * [Dirz](#Dirz) : [<code>Dirz</code>](#Dirz)
-    * [.get(key, [defaultValue])](#Dirz.get) ⇒ <code>\*</code>
-    * [.set(key, value, [type])](#Dirz.set)
-    * [.remove(key)](#Dirz.remove)
+    * [.get(key, [defaultValue])](#Dirz+get) ⇒ <code>\*</code>
+    * [.set(key, value, [type])](#Dirz+set)
+    * [.remove(key)](#Dirz+remove)
 
-<a name="Dirz.get"></a>
+<a name="Dirz+get"></a>
 
-### Dirz.get(key, [defaultValue]) ⇒ <code>\*</code>
+### dirz.get(key, [defaultValue]) ⇒ <code>\*</code>
 gets value for the key.
 
-**Kind**: static method of [<code>Dirz</code>](#Dirz)  
+**Kind**: instance method of [<code>Dirz</code>](#Dirz)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | key | <code>string</code> |  |  |
 | [defaultValue] | <code>number</code> \| <code>string</code> \| <code>boolean</code> | <code></code> | optional. returns this value if the key has not been set. |
 
-<a name="Dirz.set"></a>
+<a name="Dirz+set"></a>
 
-### Dirz.set(key, value, [type])
+### dirz.set(key, value, [type])
 sets the value with the desired type, if specified.
 `bool` type is converted to bool so that passing `"false"` will equal `false`
 
-**Kind**: static method of [<code>Dirz</code>](#Dirz)  
+**Kind**: instance method of [<code>Dirz</code>](#Dirz)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -34,14 +48,18 @@ sets the value with the desired type, if specified.
 | value | <code>number</code> \| <code>string</code> \| <code>boolean</code> |  |
 | [type] | <code>string</code> | allowed types are `string` `int`/`integer` `float` `bool`/`boolean` |
 
-<a name="Dirz.remove"></a>
+<a name="Dirz+remove"></a>
 
-### Dirz.remove(key)
-removed the key from the store
+### dirz.remove(key)
+removes the key from the store
 
-**Kind**: static method of [<code>Dirz</code>](#Dirz)  
+**Kind**: instance method of [<code>Dirz</code>](#Dirz)  
 
 | Param | Type |
 | --- | --- |
 | key | <code>string</code> | 
 
+<a name="id"></a>
+
+## id : <code>string</code>
+**Kind**: global variable  
